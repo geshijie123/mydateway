@@ -1,0 +1,34 @@
+
+
+
+
+# 启用 Dataway 功能（默认不启用）
+HASOR_DATAQL_DATAWAY: true
+  # 开启 ui 管理功能（注意生产环境必须要设置为 false，否则会造成严重的生产安全事故）
+HASOR_DATAQL_DATAWAY_ADMIN: true
+
+  # （可选）API工作路径
+HASOR_DATAQL_DATAWAY_API_URL: /api/
+  # （可选）ui 的工作路径，只有开启 ui 管理功能后才有效
+HASOR_DATAQL_DATAWAY_UI_URL: /interface-ui/
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3308/mydataway?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+      username: root
+      password: root
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  messages:
+    encoding: UTF-8
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+server:
+  servlet:
+    encoding:
+      charset: UTF-8
+  tomcat:
+    uri-encoding: UTF-8
